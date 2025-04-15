@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middlewares
 app.use(cors());
-app.use(bodyParser.text({ type: "*/*" })); // Accept raw base64 string
+app.use(bodyParser.text({ type: "*/*", limit: "10mb" }));
 
 app.post('/analyse', async (req, res) => {
     try {
